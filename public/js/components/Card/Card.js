@@ -1,3 +1,4 @@
+import Button from "../Button/Button.js";
 import Component from "../Component.js";
 class Card extends Component {
   constructor(parent, name, family, image, age) {
@@ -17,7 +18,7 @@ class Card extends Component {
     this.element.appendChild(characterDiv);
 
     const img = document.createElement("img");
-    img.className = "characterpicture card-img-top";
+    img.className = "character__picture card-img-top";
     img.alt = `${this.name} ${this.family}`;
     img.src = `img/${this.image}`;
     characterDiv.appendChild(img);
@@ -27,12 +28,12 @@ class Card extends Component {
     characterDiv.appendChild(divTitle);
 
     const characterTitle = document.createElement("h2");
-    characterTitle.className = "charactername card-title h4";
+    characterTitle.className = "character__name card-title h4";
     characterTitle.textContent = `${this.name} ${this.family}`;
     divTitle.appendChild(characterTitle);
 
     const characterInfo = document.createElement("div");
-    characterInfo.className = "characterinfo";
+    characterInfo.className = "character__info";
     divTitle.appendChild(characterInfo);
 
     const infoList = document.createElement("ul");
@@ -78,6 +79,9 @@ class Card extends Component {
     const listElementPeloteo = document.createElement("li");
     listElementPeloteo.textContent = "Peloteo ";
     cardOverlayList.appendChild(listElementPeloteo);
+
+    new Button(cardOverlay, "Habla");
+    new Button(cardOverlay, "Muere");
   }
 }
 

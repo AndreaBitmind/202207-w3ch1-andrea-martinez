@@ -44,16 +44,40 @@ class Card extends Component {
     infoList.appendChild(listElementAge);
 
     const listElementState = document.createElement("li");
-    listElementState.textContent = "Estado:";
+    listElementState.textContent = "Estado: ";
     infoList.appendChild(listElementState);
 
     const listElementThumbsDown = document.createElement("i");
     listElementThumbsDown.className = "fas fa-thumbs-down";
-    infoList.appendChild(listElementThumbsDown);
+    listElementState.appendChild(listElementThumbsDown);
 
     const listElementThumbsUp = document.createElement("i");
     listElementThumbsUp.className = "fas fa-thumbs-up";
-    infoList.appendChild(listElementThumbsUp);
+    listElementState.appendChild(listElementThumbsUp);
+
+    const cardOverlay = document.createElement("div");
+    cardOverlay.className = "character__overlay";
+    divTitle.appendChild(cardOverlay);
+
+    const cardOverlayList = document.createElement("ul");
+    cardOverlayList.className = "list-unstyled";
+    cardOverlay.appendChild(cardOverlayList);
+
+    const listElementYears = document.createElement("li");
+    listElementYears.textContent = "Años de reinado: ";
+    cardOverlayList.appendChild(listElementYears);
+
+    const listElementWeapon = document.createElement("li");
+    listElementWeapon.textContent = "Arma ";
+    cardOverlayList.appendChild(listElementWeapon);
+
+    const listElementSkill = document.createElement("li");
+    listElementSkill.textContent = "Destreza ";
+    cardOverlayList.appendChild(listElementSkill);
+
+    const listElementPeloteo = document.createElement("li");
+    listElementPeloteo.textContent = "Peloteo ";
+    cardOverlayList.appendChild(listElementPeloteo);
   }
 }
 
